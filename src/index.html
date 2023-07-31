@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Dai+Banna+SIL' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="/scripts/index.js"></script>
+    <title>Treat Code</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <figure>
+            <a href="index.html"><img id="treatCode_logo" src="/images/treatCode_logo.png" alt="Eleni's treat code logo"></a>
+        </figure>
+        <ul class="navbar_list">
+            <li class="navbar_link"><a href="index.html" class="active_page">Home</a></li>
+            <li class="navbar_link"><a href="about.html">About</a></li>
+            <li class="navbar_link" onclick="toggleModal()"><a href="#">Order</a></li>
+            <li class="navbar_link"><a href="menu.html">Menu</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero_image">
+        <div class="hero_text">
+            <h1>Treat Code</h1>
+            <p>Eleni's Home Bakery</p>
+            <button class="order_treats" type="submit" onclick="toggleModal()">Order treats</button>
+        </div>
+    </div>
+
+    <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </a>
+    
+
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title--about">Here's a bit about Eleni and Treat Code:</h3>
+            <h4 class="modal__sub-title--about">Home Baker </h4>
+            <p class="modal__para">
+                I am a 23 year-old <b class="secondary">home baker</b> in the Nashville, TN area.
+                <br>
+                My interest in macarons peaked when I had them in Indianapolis, IN. Where I went to college. I spent 
+                weeks perfecting my standard macaron recipe and feel confident that they are the best version yet. 
+                Attempting a multitude of flavors and fillings has brought a whole new level of challenge and fun to the 
+                macaron making process. Please get with me to order, ask questions, suggest flavors, and more! 
+            </p>
+        </div>
+
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">Let's chat!</h3>
+            <h4 class="modal__sub-title modal__sub-title--contact">Currently accepting new orders</h4>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">Send</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for reaching out! Looking foward to chatting soon.
+            </div>
+        </div>
+
+    </div>
+
+ 
+    <img src="/images/treat_code_menu.png" 
+    alt="menu - french macarons flavors are traditional with vanilla or chocolate buttercream, cookies and cream, and chocolate dipped strawberry"
+    class="canva_img_menu">
+
+
+
+</body>
+</html>
