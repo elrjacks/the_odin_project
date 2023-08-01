@@ -7,26 +7,103 @@
     <link href='https://fonts.googleapis.com/css?family=Dai+Banna+SIL rel='stylesheet>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <script src="/scripts/index.js"></script>
-    <title>Order</title>
+    <title>Menu</title>
 </head>
 <body>
-    <nav id="navbar">
-        <figure>
-            <a href="index.html"><img id="treatCode_logo" src="/images/treatCode_logo.png" alt="Eleni's treat code logo"></a>
-        </figure>
-        <ul class="navbar_list">
-            <li class="navbar_link"><a href="index.html">Home</a></li>
-            <li class="navbar_link"><a href="about.html">About</a></li>
-            <li class="navbar_link" onclick="toggleModal()"><a href="#">Order</a></li>
-            <li class="navbar_link"><a href="menu.html" class="active_page">Menu</a></li>
-        </ul>
-    </nav>
+    
+        <nav id="navbar">
+            <figure>
+                <a href="index.html"><img id="treatCode_logo" src="/images/treatCode_logo.png" alt="Eleni's treat code logo"></a>
+            </figure>
+            <ul class="navbar_list">
+                <li class="navbar_link"><a href="index.html">Home</a></li>
+                <li class="navbar_link"><a href="about.html">About</a></li>
+                <li class="navbar_link" onclick="toggleModal()"><a href="#">Order</a></li>
+                <li class="navbar_link"><a href="menu.html" class="active_page">Menu</a></li>
+            </ul>
+        </nav>
 
-    <a href="#">
-        <button class="mail__btn click" onclick="toggleModal()">
-            <i class="fas fa-paper-plane"></i>
-        </button>
-    </a>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </a>
+
+        <div class="slider">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <div class="slider__inner">
+                <div class="slider__contents"><img src="/images/traditional_macaron.jpg" alt="traditional macarons with white chocolate drizzle and vanilla buttercream" class="slider__image">
+                    <h2 class="slider__caption">Traditional</h2>
+                    <p class="slider__txt">Traditional macaron cookies with your choice of vanilla or chocolate buttercream.</p>
+                </div>
+                <div class="slider__contents"><img src="/images/oreo_macaron.jpg" alt="cookie and cream macarons with a cookies and cream buttercream filling." class="slider__image">
+                    <h2 class="slider__caption">Cookies & Cream</h2>
+                    <p class="slider__txt">Cookies and cream flavored shells and buttercream, making the perfect sandwhiched cookie.</p>
+                </div>
+                <div class="slider__contents"><img src="/images/strawb_macaron.jpg" alt="starwberry macarons shells with chocolate buttercream filling." class="slider__image">
+                    <h2 class="slider__caption">Chocolate Covered Strawberry</h2>
+                    <p class="slider__txt">Macaron cookies, flavored with freeze dried strawberries and a decadent chocolate buttercream filling.</p>
+                </div>
+            </div>
+        </div>
+
+        
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title--about">Here's a bit about Eleni and Treat Code:</h3>
+            <h4 class="modal__sub-title--about">Home Baker </h4>
+            <p class="modal__para">
+                I am a 23 year-old <b class="secondary">home baker</b> in the Nashville, TN area.
+                <br>
+                My interest in macarons peaked when I had them in Indianapolis, IN. Where I went to college. I spent 
+                weeks perfecting my standard macaron recipe and feel confident that they are the best version yet. 
+                Attempting a multitude of flavors and fillings has brought a whole new level of challenge and fun to the 
+                macaron making process. Please get with me to order, ask questions, suggest flavors, and more! 
+            </p>
+        </div>
+
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">Let's chat!</h3>
+            <h4 class="modal__sub-title modal__sub-title--contact">Currently accepting new orders</h4>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">Send</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for reaching out! Looking foward to chatting soon.
+            </div>
+        </div>
+
+    </div>
+<!--
+      <img src="/images/background/macarons-svgrepo-com.svg" class="shape shape--0" width="50" height="50">
+      <img src="/images/background/croissant-svgrepo-com.svg" class="shape shape--1" width="50" height="50">
+      <img src="/images/background/cupcake-svgrepo-com.svg" class="shape shape--2" width="50" height="50">
+      <img src="/images/background/macarons-svgrepo-com.svg" class="shape shape--3" width="50" height="50">
+      <img src="/images/background/croissant-svgrepo-com.svg" class="shape shape--4" width="50" height="50">
+      <img src="/images/background/macarons-svgrepo-com.svg" class="shape shape--5" width="50" height="50">
+      <img src="/images/background/cupcake-svgrepo-com.svg" class="shape shape--6" width="50" height="50">
+      <img src="/images/background/croissant-svgrepo-com.svg" class="shape shape--7" width="50" height="50">
+      <img src="/images/background/macarons-svgrepo-com.svg" class="shape shape--8" width="50" height="50">
+-->
+   
 
 </body>
 </html>
